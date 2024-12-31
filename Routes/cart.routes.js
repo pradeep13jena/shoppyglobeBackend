@@ -12,11 +12,11 @@ export function Cartroutes(app) {
   app.get("/carts", verifyToken, fetchCartWithDetails);
 
   // Route to add a product to the cart
-  app.post("/carts", addProductTocart);
+  app.post("/carts", verifyToken, addProductTocart);
 
   // Route to update the cart
-  app.put("/carts", updateTheCart);
+  app.put("/carts", verifyToken, updateTheCart);
 
   // Route to delete the cart
-  app.delete("/carts", deleteTheCart);
+  app.delete("/carts", verifyToken, deleteTheCart);
 }

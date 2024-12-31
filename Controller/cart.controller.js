@@ -48,7 +48,7 @@ export const fetchCartWithDetails = async (req, res) => {
     const cartItems = await fetchItemAggr();
     res.status(200).json(cartItems);
   } catch (error) {
-    res.status(500).json({ message: error });
+    res.status(500).json({ message: error.message });
   }
 };
 
